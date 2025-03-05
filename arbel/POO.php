@@ -1,5 +1,4 @@
 <?php
-
 class livre {
     public $titre;
     public $auteur;
@@ -35,10 +34,11 @@ class Etudiant {
     }
 }
 
-$etudiant_un = Etudiant("Miaou", "Alicia", 18, "loli");
-$etudiant_deux = Etudiant("Pacari", "Manon", 18, "<3");
+$etudiant_un = new Etudiant("Miaou", "Alicia", 18, "loli");
+$etudiant_deux = new Etudiant("Pacari", "Manon", 18, "<3");
 
 class CompteBancaire {
+    //Private = On ne peut pas récuperer les infos en dehors de la classe
     private $numeroCompte;
     private $solde;
 
@@ -63,3 +63,6 @@ class CompteBancaire {
         echo "{$this->numeroCompte} : {$this->solde}";
     }
 }
+
+$test = new CompteBancaire(1234, 18);
+$test->deposer(24);
